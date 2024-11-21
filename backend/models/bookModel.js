@@ -16,8 +16,9 @@ const bookSchema = mongoose.Schema(
     },
   },
   {
-    timeStamp: true,
+    timestamp: true,
   }
 );
+export const Book = mongoose.model("Cat", bookSchema);
 
-export const Book = mongoose.model("Cat", { name: String });
+// export const Book = mongoose.model("Cat", { name: String });
