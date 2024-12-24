@@ -10,9 +10,6 @@ const app = express();
 // middlewear for Parsing JSON
 app.use(express.json());
 
-// middlewear for handling routes from booksRoute
-app.use("/books", booksRoute);
-
 // Middlewear for handling cors policy
 // Option 1: Allow All origins with default of cors
 app.use(cors());
@@ -21,6 +18,9 @@ app.get("/", (req, res) => {
   console.log(req);
   return res.status(224).send("Welcome to MERN Stack Development");
 });
+
+// middlewear for handling routes from booksRoute
+app.use("/books", booksRoute);
 
 mongoose
   .connect(mongoDBURL)
